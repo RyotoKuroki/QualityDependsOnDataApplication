@@ -1,15 +1,28 @@
 # QualityDependsOnDataApplication
 「処理依存よりデータ依存」サンプルAPP
 
-<h3>■動作環境</h3>
-・VisualStudio v2022
+<h4>■動作環境</h4>
+<div>
+  ・VisualStudio v2022
+</div>
 
-
-<h3>■仕様</h3>
-・ロウソクの火をクリックして点滅させる
-・ロウソクの火が点滅すると本数をカウントする
-・ショートカットで一括で点滅させる
-　　┗ Ctrl ＋ A　点火
-  　┗ Ctrl ＋ Z　消化
+<h4>■仕様</h4>
+<div>
+  ・ロウソクの火をクリックして点滅させる
+</div>
+<div>
+  ・ロウソクの火が点滅すると本数をカウントする
+</div>
+<div>
+  <div>
+    ・ショートカットで一括で点滅させる<br>
+  </div>
+  <div>
+    <ul>
+      <li>Ctrl ＋ A　点火</li>
+      <li>Ctrl ＋ Z　消化</li>
+    </ul>
+  </div>
+</div>
 
 
