@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ソリューション項目", "ソリューション項目", "{D24E38BE-CD79-46E5-9376-8CC716AB3436}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		README.md = README.md
+		処理依存よりデータ依存_エンジニアの輪20250215.pptx = 処理依存よりデータ依存_エンジニアの輪20250215.pptx
 	EndProjectSection
 EndProject
 Global
