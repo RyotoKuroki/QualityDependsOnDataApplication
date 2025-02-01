@@ -5,13 +5,14 @@ namespace MainApp.Model
 {
     public class BaseModel: INotifyPropertyChanged
     {
+        /// <summary>コンストラクタ</summary>
         public BaseModel() {
             this.ロウソクA.クリック処理 = () => this.炎A = !this.炎A;
             this.ロウソクB.クリック処理 = () => this.炎B = !this.炎B;
             this.ロウソクC.クリック処理 = () => this.炎C = !this.炎C;
         }
 
-        /// <summary>炎</summary>
+        /// <summary>炎A</summary>
         public bool 炎A
         {
             get
@@ -29,7 +30,7 @@ namespace MainApp.Model
         }
         private bool _炎A = false;
 
-        /// <summary>炎</summary>
+        /// <summary>炎B</summary>
         public bool 炎B
         {
             get
@@ -47,7 +48,7 @@ namespace MainApp.Model
         }
         private bool _炎B = false;
 
-        /// <summary>炎</summary>
+        /// <summary>炎C</summary>
         public bool 炎C
         {
             get
@@ -79,24 +80,30 @@ namespace MainApp.Model
         }
         private string _本数ラベル = string.Empty;
 
+        /// <summary>炎Aの点滅処理</summary>
         protected void 点滅A()
         {
             this.炎A = !this.炎A;
         }
+        /// <summary>炎Bの点滅処理</summary>
         protected void 点滅B()
         {
             this.炎B = !this.炎B;
         }
+        /// <summary>炎Cの点滅処理</summary>
         protected void 点滅C()
         {
             this.炎C = !this.炎C;
         }
 
+        /// <summary>炎の数の編集処理</summary>
         protected void 本数をセット()
         {
             this.本数ラベル = $"{this.本数計算().ToString()}本";
         }
 
+        /// <summary>炎の数の計算処理</summary>
+        /// <returns></returns>
         protected int 本数計算()
         {
             var count = Convert.ToInt32(this.炎A)
@@ -105,6 +112,8 @@ namespace MainApp.Model
             return count;
         }
 
+        /// <summary>炎の一括点滅処理</summary>
+        /// <param name="isFired">点火/消化</param>
         public void 一括点滅(bool isFired)
         {
             this.炎A = isFired;
@@ -113,7 +122,6 @@ namespace MainApp.Model
         }
 
         /// <summary>炎の数の産出処理</summary>
-        //public SwitchFiredCommand SwitchFiredACommand { get; set; } = new SwitchFiredCommand();
         public SwitchFiredCommand ロウソクA { get; set; } = new SwitchFiredCommand();
         /// <summary>炎の数の産出処理</summary>
         public SwitchFiredCommand ロウソクB { get; set; } = new SwitchFiredCommand();

@@ -6,17 +6,15 @@ namespace MainApp.command
     {
         public event EventHandler? CanExecuteChanged;
 
-        public Action クリック処理 { get; set; }
+        public Action? クリック処理 { get; set; } = null;
 
         public bool CanExecute(object? parameter)
         {
-            //throw new NotImplementedException();
             return true;
         }
 
         public void Execute(object? parameter)
         {
-            //throw new NotImplementedException();
             this.クリック処理?.Invoke();
         }
     }
