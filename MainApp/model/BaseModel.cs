@@ -6,118 +6,119 @@ namespace MainApp.Model
     public class BaseModel: INotifyPropertyChanged
     {
         public BaseModel() {
-            this.SwitchFiredACommand.Action = () => this.IsFiredA = !this.IsFiredA;
-            this.SwitchFiredBCommand.Action = () => this.IsFiredB = !this.IsFiredB;
-            this.SwitchFiredCCommand.Action = () => this.IsFiredC = !this.IsFiredC;
+            this.ロウソクA.クリック処理 = () => this.炎A = !this.炎A;
+            this.ロウソクB.クリック処理 = () => this.炎B = !this.炎B;
+            this.ロウソクC.クリック処理 = () => this.炎C = !this.炎C;
         }
 
         /// <summary>炎</summary>
-        public bool IsFiredA
+        public bool 炎A
         {
             get
             {
-                return this.isFiredA;
+                return this._炎A;
             }
             set
             {
-                this.isFiredA = value;
-                OnPropertyChanged(nameof(IsFiredA));
+                this._炎A = value;
+                OnPropertyChanged(nameof(炎A));
 
                 if (this.PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(FiredCountLabel)));
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(本数ラベル)));
             }
         }
-        private bool isFiredA = false;
+        private bool _炎A = false;
 
         /// <summary>炎</summary>
-        public bool IsFiredB
+        public bool 炎B
         {
             get
             {
-                return this.isFiredB;
+                return this._炎B;
             }
             set
             {
-                this.isFiredB = value;
-                OnPropertyChanged(nameof(IsFiredB));
+                this._炎B = value;
+                OnPropertyChanged(nameof(炎B));
 
                 if (this.PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(FiredCountLabel)));
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(本数ラベル)));
             }
         }
-        private bool isFiredB = false;
+        private bool _炎B = false;
 
         /// <summary>炎</summary>
-        public bool IsFiredC
+        public bool 炎C
         {
             get
             {
-                return this.isFiredC;
+                return this._炎C;
             }
             set
             {
-                this.isFiredC = value;
-                OnPropertyChanged(nameof(IsFiredC));
+                this._炎C = value;
+                OnPropertyChanged(nameof(炎C));
 
                 if (this.PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(FiredCountLabel)));
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(本数ラベル)));
             }
         }
-        private bool isFiredC = false;
+        private bool _炎C = false;
 
         /// <summary>炎の数</summary>
-        public virtual string FiredCountLabel {
+        public virtual string 本数ラベル {
             get
             {
-                return this.firedCountLabel;
+                return this._本数ラベル;
             }
             set
             {
-                this.firedCountLabel = value;
-                OnPropertyChanged(nameof(FiredCountLabel));
+                this._本数ラベル = value;
+                OnPropertyChanged(nameof(本数ラベル));
             }
         }
-        private string firedCountLabel = string.Empty;
+        private string _本数ラベル = string.Empty;
 
-        protected void SwitchFiredA()
+        protected void 点滅A()
         {
-            this.IsFiredA = !this.IsFiredA;
+            this.炎A = !this.炎A;
         }
-        protected void SwitchFiredB()
+        protected void 点滅B()
         {
-            this.IsFiredB = !this.IsFiredB;
+            this.炎B = !this.炎B;
         }
-        protected void SwitchFiredC()
+        protected void 点滅C()
         {
-            this.IsFiredC = !this.IsFiredC;
-        }
-
-        protected void SetCountLabel()
-        {
-            this.FiredCountLabel = $"{this.CalcFireCount().ToString()}本";
+            this.炎C = !this.炎C;
         }
 
-        protected int CalcFireCount()
+        protected void 本数をセット()
         {
-            var count = Convert.ToInt32(this.IsFiredA)
-                      + Convert.ToInt32(this.IsFiredB)
-                      + Convert.ToInt32(this.IsFiredC);
+            this.本数ラベル = $"{this.本数計算().ToString()}本";
+        }
+
+        protected int 本数計算()
+        {
+            var count = Convert.ToInt32(this.炎A)
+                      + Convert.ToInt32(this.炎B)
+                      + Convert.ToInt32(this.炎C);
             return count;
         }
 
-        public void SwitchFireAll(bool isFired)
+        public void 一括点滅(bool isFired)
         {
-            this.IsFiredA = isFired;
-            this.IsFiredB = isFired;
-            this.IsFiredC = isFired;
+            this.炎A = isFired;
+            this.炎B = isFired;
+            this.炎C = isFired;
         }
 
         /// <summary>炎の数の産出処理</summary>
-        public SwitchFiredCommand SwitchFiredACommand { get; set; } = new SwitchFiredCommand();
+        //public SwitchFiredCommand SwitchFiredACommand { get; set; } = new SwitchFiredCommand();
+        public SwitchFiredCommand ロウソクA { get; set; } = new SwitchFiredCommand();
         /// <summary>炎の数の産出処理</summary>
-        public SwitchFiredCommand SwitchFiredBCommand { get; set; } = new SwitchFiredCommand();
+        public SwitchFiredCommand ロウソクB { get; set; } = new SwitchFiredCommand();
         /// <summary>炎の数の産出処理</summary>
-        public SwitchFiredCommand SwitchFiredCCommand { get; set; } = new SwitchFiredCommand();
+        public SwitchFiredCommand ロウソクC { get; set; } = new SwitchFiredCommand();
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -1,28 +1,45 @@
 ﻿namespace MainApp.Model
 {
-    public class DependsOnMethodModel : BaseModel
-    {
-        public DependsOnMethodModel() : base()
-        {
-            // ロウソクAのクリック処理
-            this.SwitchFiredACommand.Action = () => {
-                this.SwitchFiredA();  //炎の点滅
-                this.SetCountLabel(); //本数計算
+
+    /// <summary>処理依存クラス</summary>
+    public class DependsOnMethodModel : BaseModel {
+
+        /// <summary>コンストラクタ</summary>
+        public DependsOnMethodModel() : base() {
+
+            // イベント処理をハンドル
+            ロウソクA.クリック処理 = () => {
+                点滅A();
+                本数をセット();
             };
 
-            // ロウソクBのクリック処理
-            this.SwitchFiredBCommand.Action = () => {
-                this.SwitchFiredB();  //炎の点滅
-                this.SetCountLabel(); //本数計算
+            // イベント処理をハンドル
+            ロウソクB.クリック処理 = () => {
+                点滅B();
+                本数をセット();
             };
 
-            // ロウソクCのクリック処理
-            this.SwitchFiredCCommand.Action = () => {
-                this.SwitchFiredC();  //炎の点滅
-                this.SetCountLabel(); //本数計算
+            // イベント処理をハンドル
+            ロウソクC.クリック処理 = () => {
+                点滅C();
+                本数をセット();
             };
 
-            this.SetCountLabel();
+            本数をセット();
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,33 +1,40 @@
 ﻿namespace MainApp.Model
 {
-    public class DependsOnDataModel: BaseModel
-    {
-        public DependsOnDataModel(): base()
-        {
-            // ロウソクAのクリック処理
-            this.SwitchFiredACommand.Action = () => {
-                this.SwitchFiredA();  //炎の点滅
+
+    /// <summary>データ依存クラス</summary>
+    public class DependsOnDataModel: BaseModel {
+
+        /// <summary>コンストラクタ</summary>
+        public DependsOnDataModel(): base() {
+
+            // イベント処理をハンドル
+            ロウソクA.クリック処理 = () => {
+                点滅A();
             };
 
-            // ロウソクBのクリック処理
-            this.SwitchFiredBCommand.Action = () => {
-                this.SwitchFiredB();  //炎の点滅
+            // イベント処理をハンドル
+            ロウソクB.クリック処理 = () => {
+                点滅B();
             };
 
-            // ロウソクCのクリック処理
-            this.SwitchFiredCCommand.Action = () => {
-                this.SwitchFiredC();  //炎の点滅
+            // イベント処理をハンドル
+            ロウソクC.クリック処理 = () => {
+                点滅C();
             };
         }
 
-        /// <summary>本数計算</summary>
-        public override string FiredCountLabel
-        {
-            get
-            {
-                var count = this.CalcFireCount();
-                return $"{count.ToString()}本";
+        /// <summary>本数</summary>
+        public override string 本数ラベル {
+            get {
+                return $"{本数計算().ToString()}本";
             }
         }
     }
 }
+
+
+
+
+
+
+

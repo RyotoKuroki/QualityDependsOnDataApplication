@@ -17,23 +17,23 @@ namespace MainApp
         #endregion
 
         /// <summary>分かりにくい所に一括アイテム移動処理があああ！！！</summary>
-        public SwitchFiredCommand SwitchFireAllTurnOnCommand { get; set; } = new SwitchFiredCommand();
+        public SwitchFiredCommand 点火コマンド { get; set; } = new SwitchFiredCommand();
         /// <summary>分かりにくい所に一括アイテム移動処理があああ！！！</summary>
-        public SwitchFiredCommand SwitchFireAllTurnOffCommand { get; set; } = new SwitchFiredCommand();
+        public SwitchFiredCommand 消火コマンド { get; set; } = new SwitchFiredCommand();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            this.SwitchFireAllTurnOnCommand.Action = () =>
+            this.点火コマンド.クリック処理 = () =>
             {
-                this.DataModel.SwitchFireAll(true);
-                this.MethodModel.SwitchFireAll(true);
+                this.DataModel.一括点滅(true);
+                this.MethodModel.一括点滅(true);
             };
-            this.SwitchFireAllTurnOffCommand.Action = () =>
+            this.消火コマンド.クリック処理 = () =>
             {
-                this.DataModel.SwitchFireAll(false);
-                this.MethodModel.SwitchFireAll(false);
+                this.DataModel.一括点滅(false);
+                this.MethodModel.一括点滅(false);
             };
 
             this.DataContext = this;

@@ -26,26 +26,26 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="処理依存" TextAlignment="Center" Padding="5" FontSize="20" Background="GreenYellow" FontWeight="Bold" />
-            <TextBlock Grid.Row="1" Text="{Binding MethodModel.FiredCountLabel}" TextAlignment="Center" Padding="5" FontSize="20" FontWeight="Bold" />
+            <TextBlock Grid.Row="1" Text="{Binding MethodModel.本数ラベル}" TextAlignment="Center" Padding="5" FontSize="20" FontWeight="Bold" />
 
             <Border Grid.Row="2" Margin="35,25,35,30" Padding="1" >
                 <Image  Source="/image/Cake.png" Stretch="Fill" Opacity="0.3" />
             </Border>
 
             <Button Grid.Row="2" Margin="175,10,169,206" Padding="1" BorderBrush="Green" BorderThickness="1.2" Background="Transparent"
-                    Command="{Binding MethodModel.SwitchFiredACommand}" >
+                    Command="{Binding MethodModel.ロウソクA}" >
                 <Image Margin="0" Source="/image/Fire.png"
-                    Opacity="{Binding MethodModel.IsFiredA, Converter={StaticResource FireDisplayCnv}}" />
+                    Opacity="{Binding MethodModel.炎A, Converter={StaticResource FireDisplayCnv}}" />
             </Button>
             <Button Grid.Row="2" Margin="103,26,241,190" Padding="1" BorderBrush="Green" BorderThickness="1.2" Background="Transparent"
-                    Command="{Binding MethodModel.SwitchFiredBCommand}" >
+                    Command="{Binding MethodModel.ロウソクB}" >
                 <Image Margin="0" Source="/image/Fire.png"
-                    Opacity="{Binding MethodModel.IsFiredB, Converter={StaticResource FireDisplayCnv}}" />
+                    Opacity="{Binding MethodModel.炎B, Converter={StaticResource FireDisplayCnv}}" />
             </Button>
             <Button Grid.Row="2" Margin="241,31,103,185" Padding="1" BorderBrush="Green" BorderThickness="1.2" Background="Transparent"
-                    Command="{Binding MethodModel.SwitchFiredCCommand}" >
+                    Command="{Binding MethodModel.ロウソクC}" >
                 <Image Margin="0" Source="/image/Fire.png"
-                    Opacity="{Binding MethodModel.IsFiredC, Converter={StaticResource FireDisplayCnv}}" />
+                    Opacity="{Binding MethodModel.炎C, Converter={StaticResource FireDisplayCnv}}" />
             </Button>
         </Grid>
 
@@ -60,32 +60,32 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="データ依存" TextAlignment="Center" Padding="5" FontSize="20" Background="GreenYellow" FontWeight="Bold" />
-            <TextBlock Grid.Row="1" Text="{Binding DataModel.FiredCountLabel}" TextAlignment="Center" Padding="5" FontSize="20" FontWeight="Bold" />
+            <TextBlock Grid.Row="1" Text="{Binding DataModel.本数ラベル}" TextAlignment="Center" Padding="5" FontSize="20" FontWeight="Bold" />
 
             <Border Grid.Row="2" Margin="35,25,35,30" Padding="1" >
                 <Image  Source="/image/Cake.png" Stretch="Fill" Opacity="0.3" />
             </Border>
 
             <Button Grid.Row="2" Margin="175,10,169,206" Padding="1" BorderBrush="Green" BorderThickness="1.2" Background="Transparent"
-                    Command="{Binding DataModel.SwitchFiredACommand}" >
+                    Command="{Binding DataModel.ロウソクA}" >
                 <Image Margin="0" Source="/image/Fire.png"
-                    Opacity="{Binding DataModel.IsFiredA, Converter={StaticResource FireDisplayCnv}}" />
+                    Opacity="{Binding DataModel.炎A, Converter={StaticResource FireDisplayCnv}}" />
             </Button>
             <Button Grid.Row="2" Margin="103,26,241,190" Padding="1" BorderBrush="Green" BorderThickness="1.2" Background="Transparent"
-                    Command="{Binding DataModel.SwitchFiredBCommand}" >
+                    Command="{Binding DataModel.ロウソクB}" >
                 <Image Margin="0" Source="/image/Fire.png"
-                    Opacity="{Binding DataModel.IsFiredB, Converter={StaticResource FireDisplayCnv}}" />
+                    Opacity="{Binding DataModel.炎B, Converter={StaticResource FireDisplayCnv}}" />
             </Button>
             <Button Grid.Row="2" Margin="241,31,103,185" Padding="1" BorderBrush="Green" BorderThickness="1.2" Background="Transparent"
-                    Command="{Binding DataModel.SwitchFiredCCommand}" >
+                    Command="{Binding DataModel.ロウソクC}" >
                 <Image Margin="0" Source="/image/Fire.png"
-                    Opacity="{Binding DataModel.IsFiredC, Converter={StaticResource FireDisplayCnv}}" />
+                    Opacity="{Binding DataModel.炎C, Converter={StaticResource FireDisplayCnv}}" />
             </Button>
         </Grid>
     </Grid>
 
     <Window.InputBindings>
-        <KeyBinding Gesture="Ctrl+A" Command="{Binding SwitchFireAllTurnOnCommand}"/>
-        <KeyBinding Gesture="Ctrl+Z" Command="{Binding SwitchFireAllTurnOffCommand}"/>
+        <KeyBinding Gesture="Ctrl+A" Command="{Binding 点火コマンド}"/>
+        <KeyBinding Gesture="Ctrl+Z" Command="{Binding 消火コマンド}"/>
     </Window.InputBindings>
 </Window>

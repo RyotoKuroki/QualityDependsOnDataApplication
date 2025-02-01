@@ -6,7 +6,7 @@ namespace MainApp.command
     {
         public event EventHandler? CanExecuteChanged;
 
-        public Action Action { get; set; }
+        public Action クリック処理 { get; set; }
 
         public bool CanExecute(object? parameter)
         {
@@ -17,7 +17,7 @@ namespace MainApp.command
         public void Execute(object? parameter)
         {
             //throw new NotImplementedException();
-            this.Action?.Invoke();
+            this.クリック処理?.Invoke();
         }
     }
 }
