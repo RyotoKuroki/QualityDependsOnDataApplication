@@ -1,7 +1,7 @@
 # QualityDependsOnDataApplication
 「処理依存よりデータ依存」サンプルAPP
 
-<h4>■動作環境</h4>
+<h4>■開発環境</h4>
 <div>
   ・VisualStudio v2022
 </div>
