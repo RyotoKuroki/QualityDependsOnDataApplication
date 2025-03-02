@@ -20,7 +20,7 @@
   <div>
     <ul>
       <li>Ctrl ＋ A　点火</li>
-      <li>Ctrl ＋ Z　消化</li>
+      <li>Ctrl ＋ Z　消火</li>
     </ul>
   </div>
 </div>
