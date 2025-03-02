@@ -3,7 +3,7 @@
 
 <h4>■開発環境</h4>
 <div>
-  ・VisualStudio v2022
+  ・VisualStudio2022
 </div>
 
 <h4>■仕様</h4>
